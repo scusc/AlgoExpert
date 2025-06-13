@@ -3,10 +3,10 @@
 # Meaning, we will need to store the values in a hashSet
 
 def twoSum(nums, target):
-    seen = {}
+    seen = []
     for i in nums:
         if(target - i in seen):
-            return [seen[target - i], i]
+            return [target - i, i]
         else:
-            seen.add(i)
+            seen.append(i)
     return []
