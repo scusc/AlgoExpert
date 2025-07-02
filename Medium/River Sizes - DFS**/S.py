@@ -1,6 +1,11 @@
 def dfs(row, col, visited, matrix):
     if row not in range(len(matrix)) or col not in range(len(matrix[0])) or (row, col) in visited or matrix[row][col] == 0:
         return 0
+    
+    # no need to backtrack since we are not modifying the matrix
+    # and we are only counting the size of the river
+    # so we can just mark the cell as visited
+    # and continue the search
     visited.add((row, col))
     size = 0
     directions = [(1,0), (0,1), (-1,0), (0,-1)]
